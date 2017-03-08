@@ -1,0 +1,12 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mdb": {
+    "database": "inventory",
+    "name": "mdb",
+    "connector": "mongodb",
+    "allowExtendedOperators": true
+  }
+}

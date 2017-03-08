@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row" style="margin-bottom:30px;">
+        <h2 style="text-align:center"><strong>Inventory</strong></h2>
+    </div>
+    <div class="row" style="margin-bottom:30px;">
+        <div class="col-sm-4" style="display:flex">
+            <input class="form-control" type=number name="id" ng-model="data_id" />
+            <button ng-show="data_id" class="btn btn-primary" ng-click="getId(data_id)">Submit</button>
+        </div>
+        <!-- <div class="col-sm-4" ng-if="current">
+            <h4><span class="label label-success" style="padding:10px;">The current position of {{current.equipmentId}} is : {{current.position}}</span></h4>
+        </div> -->
+    </div>
+    <div class="row clearfix" style="margin-bottom:30px;">
+        <h4><span class="label label-primary" style="padding:10px;float:left">Total : {{instruments.length}}</h4>
+        <button class="btn btn-primary btn" style="float:right" ng-if="!all" ng-click="toggle()">Show All</button>
+        <button class="btn btn-primary btn" style="float:right" ng-if="all" ng-click="toggle()">Hide All</button>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" style="padding:0px;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Instrument No</th>
+                        <th ng-if="all">Instrument Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in instruments">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ item.id }}</td>
+                        <td ng-if="all">{{ item.position }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
